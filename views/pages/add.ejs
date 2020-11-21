@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/rectangle.css">
+    <title>Rectangle</title>
+  </head>
+  <body>
+    <header>
+      <%- include ('./include/nav') %>
+    </header>
+    <main>
+      <section class="center50">
+        <form class="addform" action="/addRect" method="post">
+          <fieldset>
+            <legend><h3>Adding a New Rectangle</h3></legend>
+            <section class="form-group">
+              <label for="width">Width (0-500): </label>
+              <input type="number" class="form-control" name="width" id="newWidth" placeholder="e.g. 50" min="0" max="500" required><br>
+            </section>
+            <section class="form-group">
+              <label for="height">Height (0-500): </label>
+              <input type="number" class="form-control" name="height" id="newHeight" placeholder="e.g. 30" min="0" max="500" required><br>
+            </section>
+            <section class="form-group">
+              <label for="color">Color : </label>
+              <input type="color" class="form-control" name="color" id="newColor" required><br>
+            </section>
+            <section class="form-group">
+              <label for="bWidth">Border Width (0-10): </label>
+              <input type="number" class="form-control" name="bWidth" id="newBWidth" placeholder="e.g. 5" min="0" max="10" required><br>
+            </section>
+            <section class="form-group">
+              <label for="bColor">Border Color : </label>
+              <input type="color" class="form-control" name="bColor" id="newBColor" required><br>
+            </section>
+            <section class="form-group">
+              <label for="radius">Corner Radius (0-30):</label>
+              <input type="number" class="form-control" name="radius" id="newRadius" placeholder="e.g. 10" min="0" max="30" required><br>
+            </section>
+            <button type="submit" class="btn btn-primary" name="addBut" id="addBut">Add new rectangle </button>
+          </fieldset>
+        </form>
+      </section>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/rectangle.css">
+    <title>Rectangle</title>
+  </head>
+  <body>
+    <header>
+      <%- include ('./include/nav') %>
+    </header>
+    <main>
+      <section class="center50">
+        <table class="table table-striped">
+          <caption style="caption-side: top; color:Black"><h3>All Rectangles :</h3></caption>
+          <thead>
+            <tr>
+              <th scope="col">#id</th>
+              <th scope="col">Width</th>
+              <th scope="col">Height</th>
+              <th scope="col">Color</th>
+              <th scope="col">Border Width</th>
+              <th scope="col">Border Color</th>
+              <th scope="col">Corner Radius</th>
+              <th scope="col"><b>DELETE</b></th>
+              <th scope="col"><b>Edit</b></th>
+            </tr>
+          </thead>
+          <tbody>
+            <% db.forEach( rectangle => {%>
+              <tr>
+                <th scope="row"><%= rectangle.id%></th>
+                <td><%= rectangle.width%></td>
+                <td><%= rectangle.height%></td>
+                <td><section class='draw_color' style="background-color:<%= rectangle.color%>;"></td>
+                <td><%= rectangle.bWidth%></td>
+                <td><section class='draw_color' style="background-color:<%= rectangle.bColor%>;"></td>
+                <td><%= rectangle.radius%></td>
+                <td>
+                  <form action="/deleteRect" method="post">
+                    <input type="hidden" name="delID" id="delID" value=<%=rectangle.id%>>
+                    <button type="submit">delete</button>
+                  </form>
+                </td>
+                <td>
+                  <form action="/edit" method="post">
+                    <input type="hidden" name="editID" id="editID" value=<%=rectangle.id%>>
+                    <button type="submit">edit</button>
+                  </form>
+                </td>
+              </tr>
+            <% })%>
+          </tbody>
+        </table>
+      </section>
+    </main>
+
+
+  </body>
+</html>

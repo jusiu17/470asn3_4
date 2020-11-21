@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/rectangle.css">
+    <title>Rectangle</title>
+  </head>
+  <body>
+    <header>
+      <%- include ('include/nav') %>
+    </header>
+    <main>
+      <section class="center50">
+        <h2>Display All Rectangles</h2>
+        <% db.forEach( rectangle => {%>
+          <section class="single_rect">
+            <section style="
+                  width: <%= rectangle.width%>px;
+                  height: <%= rectangle.height%>px;
+                  background-color: <%= rectangle.color%>;
+                  border: solid <%= rectangle.bWidth%>px;
+                  border-color: <%= rectangle.bColor%>;
+                  border-radius: <%= rectangle.radius%>px;"></section>
+            Rectangle ID : <%= rectangle.id%>
+          </section>
+        <% })%>
+      </section>
+    </main>
+  </body>
+</html>

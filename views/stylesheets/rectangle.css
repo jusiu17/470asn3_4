@@ -1,0 +1,16 @@
+body {
+  background-color: #aba6a6;
+}
+
+.center50 {
+  margin: 0% 25%;
+}
+
+.single_rect {
+  margin: 8% 5%;
+}
+
+.draw_color {
+  width: 20px;
+  height: 20px;
+}

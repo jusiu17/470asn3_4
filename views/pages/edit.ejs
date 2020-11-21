@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/rectangle.css">
+    <title>Rectangle</title>
+  </head>
+  <body>
+    <header>
+      <%- include ('./include/nav') %>
+    </header>
+    <main>
+      <section class="center50">
+        <form class="editform" action="/editRect" method="post">
+          <input type="hidden" name="editID" id="editID" value=<%=id%>>
+          <fieldset>
+            <legend><h3>Edit Rectangle <%=id%></h3></legend>
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th scope="col">Attribute</th>
+                  <th scope="col">Current Value</th>
+                  <th scope="col">Change To</th>
+                </tr>
+              </thead>
+              <tbody>
+                  <tr>
+                    <td>Width (0-500): </td>
+                    <td><%=width%></td>
+                    <td><input type="number" class="form-control" name="width" id="newWidth" placeholder="e.g. 50" min="0" max="500"  value="<%=width%>" required></td>
+                  </tr>
+                  <tr>
+                    <td>Height (0-500): </td>
+                    <td><%=height%></td>
+                    <td><input type="number" class="form-control" name="height" id="newHeight" placeholder="e.g. 30" min="0" max="500" value="<%=height%>" required></td>
+                  </tr>
+                  <tr>
+                    <td>Color : </td>
+                    <td><section class='draw_color' style="background-color:<%=color%>;"></section></td>
+                    <td><input type="color" class="form-control" name="color" id="newColor" value="<%=color%>" required></td>
+                  </tr>
+                  <tr>
+                    <td>Border Width (0-10):</td>
+                    <td><%=bWidth%></td>
+                    <td><input type="number" class="form-control" name="bWidth" id="newBWidth" placeholder="e.g. 5" min="0" max="10" value="<%=bWidth%>" required></td>
+                  </tr>
+                  <tr>
+                    <td>Border Color : </td>
+                    <td><section class='draw_color' style="background-color:<%=bColor%>;"></td>
+                    <td><input type="color" class="form-control" name="bColor" id="newBColor"  value="<%=bColor%>" required></td>
+                  </tr>
+                  <tr>
+                    <td>Corner Radius (0-30): </td>
+                    <td><%=radius%></td>
+                    <td><input type="number" class="form-control" name="radius" id="newRadius" placeholder="e.g. 10" min="0" max="30" value="<%=radius%>" required></td>
+                  </tr>
+              </tbody>
+            </table>
+          </fieldset>
+          <button type="submit" class="btn btn-primary" name="editBut" id="editBut">Edit</button>
+        </form>
+      </section>
+    </main>
+
+
+  </body>
+</html>
